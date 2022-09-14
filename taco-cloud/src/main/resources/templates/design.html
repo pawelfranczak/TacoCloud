@@ -12,6 +12,8 @@
 	<form method="POST" th:object="${design}">
 	
 	<div class="grid">
+		<span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}">Brak składników</span><br/>
+	
 		<div class="ingredient-group" id="wraps">
 		<h3>Wybierz rodzaj mąki:</h3>
 			<div th:each="ingredient : ${wrap}">
@@ -55,7 +57,7 @@
 	</div>
 	
 	<h3>Nadaj nazwę swojemu taco</h3>
-	<span th:text="${#fields.errors}">Błąd w nazwie</span>
+	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Błąd w nazwie</span><br/>
 	<input type="text" th:field="*{name}"/>
 	
 	<button>Wyślij zamówienie.</button>
