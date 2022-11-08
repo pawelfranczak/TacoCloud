@@ -31,7 +31,7 @@ public class Taco {
 	@ManyToMany(targetEntity = Ingredient.class)
 	@NotNull(message = "Musisz wybrać przynajmniej jeden składnik")
 	@Size(min = 1, message = "Musisz wybrać przynajmniej jeden składnik")
-	private List<String> ingredients;
+	private List<Ingredient> ingredients;
 	
 	@PrePersist
 	void createdAt() {

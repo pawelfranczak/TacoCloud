@@ -65,7 +65,7 @@ public class DesignTacoController {
 	@GetMapping
 	public String showDesignForm(Model model) {
 		Taco design = new Taco();
-		design.setIngredients(new ArrayList<String>());
+		design.setIngredients(new ArrayList<Ingredient>());
 		model.addAttribute("design", design);
 		return "design";
 	}
