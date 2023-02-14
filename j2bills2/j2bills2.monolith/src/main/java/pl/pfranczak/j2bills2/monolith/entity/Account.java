@@ -49,5 +49,5 @@ public class Account {
 	
 	@Column(nullable=false, columnDefinition = "bool DEFAULT true")
 	private Boolean takeIntoTotalSum;
-
+	
 }
